@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.gayatri.accountservice.constants.Constants;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -26,6 +28,6 @@ public class TestControllerTests {
     public void getHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello!")));
+                .andExpect(content().string(equalTo(Constants.GREETING_HELLO)));
     }
 }
