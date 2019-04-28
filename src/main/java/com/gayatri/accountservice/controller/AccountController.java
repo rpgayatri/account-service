@@ -24,7 +24,7 @@ public class AccountController extends AbstractController {
 	private AccountControllerService service;
 	
 	@RequestMapping(value = "/accounts", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Set<UserAccount>> hello(@RequestParam(value = "userId") String userId)
+	public @ResponseBody ResponseEntity<Set<UserAccount>> getAccountsForUserId(@RequestParam(value = "userId") String userId)
 			throws EmptyUserIdException, NoAccountFoundForUserIdException, NullUserIdException, UserIdTooLengthyException {
 		return service.getAccountsForUserId(userId);
 	}

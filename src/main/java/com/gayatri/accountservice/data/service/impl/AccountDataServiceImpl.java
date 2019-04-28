@@ -19,7 +19,7 @@ public class AccountDataServiceImpl implements AccountDataService{
 	@Override
 	public Set<UserAccount> getUserAccounts(String userId) throws NoAccountFoundForUserIdException {
 		
-		/* fetch from database if userId is valid */
+		/* fetch from database */
 		Set<UserAccount> accounts = accountRepository.findByAccountIdentityUserId(userId);
 		
 		if(accounts.isEmpty()) {
