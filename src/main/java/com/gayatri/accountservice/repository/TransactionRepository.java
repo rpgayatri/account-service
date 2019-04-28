@@ -11,6 +11,7 @@ import com.gayatri.accountservice.model.AccountTransaction;
 @Repository
 public interface TransactionRepository extends JpaRepository<AccountTransaction, Long> {
 	
+	/* fetch account transactions for given Account Number */
 	@Query(value = "SELECT * FROM account_transaction m where m.account_number = ?1", 
 			  nativeQuery = true)
 	List<AccountTransaction> findTransactionByAccountNumber(String accountNumber);

@@ -5,6 +5,8 @@ import javax.persistence.AttributeConverter;
 import org.joda.money.CurrencyUnit;
 
 public class CurrencyUnitConverter implements AttributeConverter<CurrencyUnit, String> {
+	
+	/* Hibernate type converter for custom type - CurrencyUnit */
 
 	@Override
 	public String convertToDatabaseColumn(CurrencyUnit attribute) {

@@ -24,6 +24,7 @@ public class TransactionController extends AbstractController {
 	@Autowired
 	private TransactionControllerService service;
 
+	/* API to get account-transactions for provided account number */
 	@RequestMapping(value = "/transactions", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<AccountTransaction>> getTransactionsForAccountNumber(
 			@RequestParam(value = "accountNumber") String accountNumber)

@@ -6,6 +6,8 @@ import com.gayatri.accountservice.model.AccountTransaction.TransactionType;
 
 public class TransactionTypeConverter implements AttributeConverter<TransactionType, String>{
 
+	/* Hibernate type converter for custom type - TransactionType */
+	
 	@Override
 	public String convertToDatabaseColumn(TransactionType attribute) {
 		if(attribute == null) {

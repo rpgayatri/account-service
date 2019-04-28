@@ -6,6 +6,8 @@ import com.gayatri.accountservice.model.UserAccount.AccountType;
 
 public class AccountTypeConverter implements AttributeConverter<AccountType, String>{
 
+	/* Hibernate type converter for custom type - AccountType */
+	
 	@Override
 	public String convertToDatabaseColumn(AccountType attribute) {
 		if(attribute == null) {

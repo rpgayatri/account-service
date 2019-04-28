@@ -22,6 +22,7 @@ public class AccountControllerServiceImpl implements AccountControllerService {
 	@Autowired
 	private AccountDataService dataService;
 	
+	/* service implementation for get user accounts for user ID API */
 	@Override
 	public ResponseEntity<Set<UserAccount>> getAccountsForUserId(String userId) throws EmptyUserIdException,
 			NoAccountFoundForUserIdException, NullUserIdException, UserIdTooLengthyException {

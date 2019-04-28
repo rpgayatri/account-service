@@ -23,6 +23,7 @@ public class AccountController extends AbstractController {
 	@Autowired
 	private AccountControllerService service;
 	
+	/* API for getting accounts for the provided user ID */
 	@RequestMapping(value = "/accounts", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<Set<UserAccount>> getAccountsForUserId(@RequestParam(value = "userId") String userId)
 			throws EmptyUserIdException, NoAccountFoundForUserIdException, NullUserIdException, UserIdTooLengthyException {

@@ -14,6 +14,7 @@ import com.gayatri.accountservice.model.ErrorResource;
 @RestController
 public class ApplicationErrorController implements ErrorController{
 	
+	/* API to handle unexpected errors in the application */ 
 	@RequestMapping(value = "/error", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ErrorResource> getError() {
 		ErrorResource errorResource = new ErrorResource(HttpStatus.BAD_REQUEST.value(), Constants.ERROR_MESSAGE);		

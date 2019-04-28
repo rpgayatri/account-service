@@ -16,6 +16,7 @@ public class AccountDataServiceImpl implements AccountDataService{
 	@Autowired
 	private AccountRepository accountRepository;
 
+	/* Data Service Implementation for getAccounts API */
 	@Override
 	public Set<UserAccount> getUserAccounts(String userId) throws NoAccountFoundForUserIdException {
 		

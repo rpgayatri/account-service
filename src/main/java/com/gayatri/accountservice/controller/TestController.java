@@ -12,6 +12,7 @@ import com.gayatri.accountservice.constants.Constants;
 @RestController
 public class TestController {
 	
+	/* Hello API */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> hello() {
 		return new ResponseEntity<>(Constants.GREETING_HELLO , HttpStatus.OK);

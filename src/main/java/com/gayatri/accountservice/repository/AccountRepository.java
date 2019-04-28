@@ -11,5 +11,6 @@ import com.gayatri.accountservice.model.UserAccount;
 @Repository
 public interface AccountRepository extends JpaRepository<UserAccount, AccountIdentity>{
 	
+	/* fetch user accounts for given user ID */
 	Set<UserAccount> findByAccountIdentityUserId(String userId);
 }
