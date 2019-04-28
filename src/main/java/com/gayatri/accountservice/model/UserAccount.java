@@ -1,28 +1,52 @@
 package com.gayatri.accountservice.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.joda.money.CurrencyUnit;
 
+import com.gayatri.accountservice.converter.AccountTypeConverter;
+import com.gayatri.accountservice.converter.CurrencyUnitConverter;
 
-public class UserAccount {
+@Table(name = "user_account")
+@Entity
+public class UserAccount implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public enum AccountType {
 		SAVINGS,
 		CURRENT
 	}
 	
+	@EmbeddedId
 	private AccountIdentity accountIdentity;
 	
+	@Column(name = "Account_Name")
 	private String accountName;
 	
+	@Column(name = "Balance_Date")
 	private LocalDate balanceDate;
 	
+	@Column(name = "Currency")
+	@Convert(converter = CurrencyUnitConverter.class)
 	private CurrencyUnit currency;
 	
+	@Column(name = "Opening_Balance")
 	private BigDecimal openingAvailableBalance;
 	
+	@Column(name = "Account_Type")
+	@Convert(converter = AccountTypeConverter.class)
 	private AccountType accountType;
 
 	public AccountIdentity getAccountIdentity() {
