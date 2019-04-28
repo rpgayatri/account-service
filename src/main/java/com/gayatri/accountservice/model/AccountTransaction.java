@@ -17,7 +17,6 @@ import javax.persistence.Table;
 
 import org.joda.money.CurrencyUnit;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gayatri.accountservice.converter.CurrencyUnitConverter;
 import com.gayatri.accountservice.converter.TransactionTypeConverter;
 
@@ -42,7 +41,6 @@ public class AccountTransaction implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "Account_Number", insertable = true, updatable = false)
 	@JoinColumn(name = "User_ID", insertable = true, updatable = false)
-	@JsonIgnore
 	private UserAccount account;
 	
 	@Column(name = "Value_Date")
