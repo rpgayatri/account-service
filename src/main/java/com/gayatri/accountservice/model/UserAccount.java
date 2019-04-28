@@ -10,6 +10,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Proxy;
 import org.joda.money.CurrencyUnit;
 
 import com.gayatri.accountservice.converter.AccountTypeConverter;
@@ -17,6 +18,7 @@ import com.gayatri.accountservice.converter.CurrencyUnitConverter;
 
 @Table(name = "user_account")
 @Entity
+@Proxy(lazy=false)
 public class UserAccount implements Serializable {
 	
 	/**
