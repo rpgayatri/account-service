@@ -17,6 +17,7 @@ import javax.persistence.Table;
 
 import org.joda.money.CurrencyUnit;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gayatri.accountservice.converter.CurrencyUnitConverter;
 import com.gayatri.accountservice.converter.TransactionTypeConverter;
 
@@ -44,6 +45,7 @@ public class AccountTransaction implements Serializable{
 	private UserAccount account;
 	
 	@Column(name = "Value_Date")
+	@JsonFormat(pattern = "MMM, dd, YYYY")
 	private LocalDate valueDate;
 	
 	@Convert(converter = CurrencyUnitConverter.class)

@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 import org.joda.money.CurrencyUnit;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gayatri.accountservice.converter.AccountTypeConverter;
 import com.gayatri.accountservice.converter.CurrencyUnitConverter;
 
@@ -38,6 +39,7 @@ public class UserAccount implements Serializable {
 	private String accountName;
 	
 	@Column(name = "Balance_Date")
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate balanceDate;
 	
 	@Column(name = "Currency")
